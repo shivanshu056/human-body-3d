@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080d18" />
+  <title>Human Body 3D Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark">H<span>3D</span></div>
+      <div class="brand-copy">
+        <p class="eyebrow">INTERACTIVE SCIENCE</p>
+        <h1>Human Body <span>Explorer</span></h1>
+      </div>
+      <div class="live-pill"><i></i> 3D MODEL LIVE</div>
+    </header>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow">DISCOVER THE HUMAN FORM</p>
+        <h2>Explore the body<br><span>in three dimensions.</span></h2>
+        <p class="intro-text">Drag to rotate • Scroll or pinch to zoom • Tap a body part to explore</p>
+      </div>
+      <div class="hint-card"><b>01</b><span>ROTATE<br>THE MODEL</span><div class="orbit-icon">↻</div></div>
+    </section>
+
+    <section class="viewer-card">
+      <div class="viewer-head">
+        <div><span class="small-dot"></span> ANATOMY VIEW</div>
+        <span class="view-label" id="viewLabel">FRONT VIEW</span>
+      </div>
+      <div id="stage" aria-label="Interactive 3D human body model">
+        <div class="loading" id="loading"><span class="loader"></span><b>Building 3D model…</b></div>
+        <div class="model-tag">HUMAN<br><strong>01 / 01</strong></div>
+        <div class="stage-bottom">DRAG TO ROTATE <span>•</span> PINCH TO ZOOM</div>
+      </div>
+      <div class="viewer-controls">
+        <button class="control-btn active" id="rotateBtn" type="button">↻ <span>Auto rotate</span></button>
+        <button class="control-btn" id="resetBtn" type="button">◎ <span>Reset view</span></button>
+        <button class="control-btn" id="labelsBtn" type="button">⌗ <span>Labels</span></button>
+      </div>
+    </section>
+
+    <section class="details">
+      <div class="section-title"><div><p class="eyebrow">QUICK EXPLORER</p><h3>Body regions</h3></div><span class="select-note">SELECT A REGION</span></div>
+      <div class="region-grid">
+        <button class="region" data-part="Head" type="button"><span>◉</span><b>Head</b><small>Brain & senses</small></button>
+        <button class="region" data-part="Chest" type="button"><span>▤</span><b>Chest</b><small>Heart & lungs</small></button>
+        <button class="region" data-part="Arms" type="button"><span>⌁</span><b>Arms</b><small>Movement</small></button>
+        <button class="region" data-part="Abdomen" type="button"><span>▦</span><b>Abdomen</b><small>Digestion</small></button>
+        <button class="region" data-part="Legs" type="button"><span>⌇</span><b>Legs</b><small>Support & motion</small></button>
+      </div>
+      <div class="info-panel" id="infoPanel">
+        <div class="info-icon">✦</div>
+        <div><p class="eyebrow">DID YOU KNOW?</p><h4 id="infoTitle">Your body is amazing.</h4><p id="infoText">Choose a body region above to see a quick learning note.</p></div>
+      </div>
+    </section>
+    <footer>BUILT FOR LEARNING <span>•</span> HUMAN BODY 3D</footer>
+  </main>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
